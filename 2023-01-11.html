@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #4a3757;
+        background: -webkit-radial-gradient(bottom right, #4a3757, #1b3146);
+        background: -moz-radial-gradient(bottom right, #4a3757, #1b3146);
+        background: radial-gradient(to top left, #4a3757, #1b3146);
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif;
+        font-size: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(115, 146, 170);
+      }
+
+      .demo-position {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .navigation {
+        background: rgb(15, 33, 53);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+        width: 1000px;
+        padding: 16px 25px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .navigation > .numbers {
+        flex: 1 0 0;
+        text-align: center;
+      }
+
+      .navigation > .numbers > .link {
+        display: inline-block;
+        width: 42px;
+        height: 42px;
+        line-height: 40px;
+        margin: 0 8px;
+        text-align: center;
+      }
+
+      .navigation > .numbers > .link:hover,
+      .navigation > .numbers > .selected {
+        background: linear-gradient(rgb(15, 33, 53), rgb(15, 33, 53)) padding-box, linear-gradient(to top right, rgb(116, 75, 141), rgb(193, 57, 131)) border-box;
+        color: rgb(202, 68, 134);
+        border-radius: 50%;
+        border: 1px solid transparent;
+      }
+
+      .navigation > .prev,
+      .navigation > .next {
+        flex: 0 1 auto;
+        color: rgb(181, 64, 121);
+      }
+
+      .total {
+        display: block;
+        font-size: 18px;
+        font-style: normal;
+        margin: 10px 0 0 0;        
+        color: rgb(75, 106, 126);
+      }
+
+    </style>
+  </head>
+  <body>
+    <section class="demo-position">
+      <nav class="navigation">
+        <a href="#" class="prev">Prev</a>
+
+        <div class="numbers">
+          <a href="#" class="link" role="navigation">1</a>
+          <a href="#" class="link" role="navigation">2</a>
+          <a href="#" class="link" role="navigation">3</a>
+          <a href="#" class="link" role="navigation">...</a>
+          <a href="#" class="link" role="navigation">8</a>
+          <a href="#" class="link selected" role="navigation">9</a>
+          <a href="#" class="link" role="navigation">11</a>
+          <a href="#" class="link" role="navigation">12</a>
+          <a href="#" class="link" role="navigation">13</a>
+          <a href="#" class="link" role="navigation">14</a>
+        </div>
+
+        <a href="#" class="next">Next</a>
+      </nav>
+      <em class="total">- 1477 items -</em>
+    </section>
+  </body>
+</html>
