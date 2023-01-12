@@ -1,0 +1,217 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: rgb(247, 248, 252);
+        font-family: Lato, sans-serif;
+        font-weight: 700;
+        margin: 50px;
+      }
+
+      a {
+        transition: all linear 80ms;
+        display: inline-block;
+        text-decoration: none;
+        color: rgb(83, 93, 121);
+        text-align: center;
+        margin: 0 5px 0 0;
+        line-height: 50px;
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+        cursor: pointer;
+      }
+
+      a:last-child {
+        margin: 0;
+      }
+
+      .pagination {
+        margin: 0 0 50px 0;
+      }
+
+      .arrow > svg {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        fill: rgb(83, 93, 121);
+        margin: 3px 0 0 3px;
+      }
+
+      .arrow-left {
+        transform: rotate(180deg);
+      }
+
+      /* Pagination Style 1 */
+
+      .pag1 > .item {
+        background: white;
+        border: 1px solid rgb(218, 225, 245);
+        border-radius: 5px;
+      }
+
+      .pag1 > .item:hover,
+      .pag1 > .selected {
+        background: rgb(16, 24, 47);
+        color: rgb(255, 255, 255);
+      }
+
+      .pag1 > .arrow {
+        background: none;
+        border: 0;
+      }
+
+      .pag1 > .arrow:hover {
+        background: none;
+      }
+
+      /* Pagination Style 2 */
+
+      .pag2 > .item {
+        background: white;
+        border: 1px solid rgb(218, 225, 245);
+        border-radius: 50%;
+      }
+
+      .pag2 > .item:hover,
+      .pag2 > .selected {
+        background: rgb(16, 24, 47);
+        color: rgb(255, 255, 255);
+      }
+
+      .pag2 > .arrow:hover > svg {
+        fill: rgb(255, 255, 255);
+      }
+
+      /* Pagination Style 3 */
+
+      .pag3 > .item {
+        border-radius: 50%;
+      }
+
+      .pag3 > .item:hover,
+      .pag3 > .selected {
+        background: rgb(16, 24, 47);
+        color: rgb(255, 255, 255);
+      }
+
+      .select-alt > .item:hover,
+      .select-alt > .selected {
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="pagination pag1">
+      <a href="#" class="item selected">1</a>
+      <a href="#" class="item">2</a>
+      <a href="#" class="item">3</a>
+      <a href="#" class="item more">⋯</a>
+      <a hhref="#" class="item arrow">
+        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.859 4.125l2.156-2.109 9.984 9.984-9.984 9.984-2.156-2.109 7.922-7.875z"></path>
+        </svg>
+      </a>
+    </section>
+
+    <section class="pagination pag1">
+      <a href="#" class="item arrow arrow-left">
+        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.859 4.125l2.156-2.109 9.984 9.984-9.984 9.984-2.156-2.109 7.922-7.875z"></path>
+        </svg>
+      </a>
+      <a href="#" class="item">1</a>
+      <a href="#" class="item selected">2</a>
+      <a href="#" class="item">3</a>
+      <a href="#" class="item">4</a>
+      <a href="#" class="item more">⋯</a>
+      <a href="#" class="item arrow">
+        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.859 4.125l2.156-2.109 9.984 9.984-9.984 9.984-2.156-2.109 7.922-7.875z"></path>
+        </svg>
+      </a>
+    </section>
+
+    <br /><br /><br /><br />
+
+    <section class="pagination pag2">
+      <a href="#" class="item selected">1</a>
+      <a href="#" class="item">2</a>
+      <a href="#" class="item">3</a>
+      <a href="#" class="item more">⋯</a>
+      <a href="#" class="item arrow">
+        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.859 4.125l2.156-2.109 9.984 9.984-9.984 9.984-2.156-2.109 7.922-7.875z"></path>
+        </svg>
+      </a>
+    </section>
+
+    <section class="pagination pag2 select-alt">
+      <a href="#" class="item arrow arrow-left">
+        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.859 4.125l2.156-2.109 9.984 9.984-9.984 9.984-2.156-2.109 7.922-7.875z"></path>
+        </svg>
+      </a>
+      <a href="#" class="item">1</a>
+      <a href="#" class="item selected">2</a>
+      <a href="#" class="item">3</a>
+      <a href="#" class="item">4</a>
+      <a href="#" class="item more">⋯</a>
+      <a href="#" class="item arrow">
+        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.859 4.125l2.156-2.109 9.984 9.984-9.984 9.984-2.156-2.109 7.922-7.875z"></path>
+        </svg>
+      </a>
+    </section>
+
+    <br /><br /><br /><br />
+
+    <section class="pagination pag3">
+      <a href="#" class="item selected">1</a>
+      <a href="#" class="item">2</a>
+      <a href="#" class="item">3</a>
+      <a href="#" class="item">1</a>
+      <a href="#" class="item arrow">
+        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.859 4.125l2.156-2.109 9.984 9.984-9.984 9.984-2.156-2.109 7.922-7.875z"></path>
+        </svg>
+      </a>
+    </section>
+
+    <section class="pagination pag3 select-alt">
+      <a href="#" class="item arrow arrow-left">
+        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.859 4.125l2.156-2.109 9.984 9.984-9.984 9.984-2.156-2.109 7.922-7.875z"></path>
+        </svg>
+      </a>
+      <a href="#" class="item">1</a>
+      <a href="#" class="item selected">2</a>
+      <a href="#" class="item">3</a>
+      <a href="#" class="item">4</a>
+      <a href="#" class="item">1</a>
+      <a href="#" class="item arrow">
+        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.859 4.125l2.156-2.109 9.984 9.984-9.984 9.984-2.156-2.109 7.922-7.875z"></path>
+        </svg>
+      </a>
+    </section>
+  </body>
+</html>
