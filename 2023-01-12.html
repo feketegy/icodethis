@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: rgb(71, 111, 119);
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif;
+        font-size: 20px;
+      }
+
+      .poll {        
+        max-width: 700px;
+        background: rgb(255, 255, 255);
+        box-shadow: 0 0 100px 60px rgb(0, 0, 0, 0.1);
+        border-radius: 10px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      @media screen and (min-width: 992px) {
+        .poll {
+          width: 700px;
+        }
+      }
+
+      .poll > .question {
+        font-size: 22px;
+        font-weight: 700;
+        text-align: center;
+        background: rgb(242, 252, 254);
+        color: rgb(80, 120, 126);
+        margin: 0;
+        padding: 0;
+        line-height: 30px;
+      }
+
+      .poll > .question > span {
+        display: inline-block;
+        max-width: 430px;
+        padding: 40px 0;
+      }
+
+      .poll > .poll-option {
+        padding: 40px 30px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .poll > .poll-option .question-select {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-weight: 400;
+        color: rgb(79, 118, 126);
+        font-size: 22px;
+        margin: 0 0 10px 0;
+      }
+
+      .poll > .poll-option .question-select input {
+        flex: 0 0 28px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 28px;
+        height: 28px;
+        border: 0;
+        position: relative;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='none' stroke='%23dbd9da' style='stroke: var(--color1, %23dbd9da)' stroke-linejoin='miter' stroke-linecap='butt' stroke-miterlimit='4' stroke-width='0.4375' d='M4.375 0.219h19.25c2.295 0 4.156 1.861 4.156 4.156v19.25c0 2.295-1.861 4.156-4.156 4.156h-19.25c-2.295 0-4.156-1.861-4.156-4.156v-19.25c0-2.295 1.861-4.156 4.156-4.156z'%3e%3c/path%3e%3c/svg%3e");
+        border-radius: 0;
+        margin: 0 10px 0 0;
+      }
+
+      .poll > .poll-option .question-select input:checked::before {
+        content: "";
+        width: 28px;
+        height: 28px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='%2305b2d4' style='fill: var(--color1, %2305b2d4)' d='M4.375 0h19.25c2.416 0 4.375 1.959 4.375 4.375v19.25c0 2.416-1.959 4.375-4.375 4.375h-19.25c-2.416 0-4.375-1.959-4.375-4.375v-19.25c0-2.416 1.959-4.375 4.375-4.375z'%3e%3c/path%3e%3cpath fill='%23fff' style='fill: var(--color2, %23fff)' d='M18.211 9.188l-5.742 5.742-2.68-2.68-1.914 1.914 4.594 4.594 7.656-7.656-1.914-1.914z'%3e%3c/path%3e%3c/svg%3e");
+        border-radius: 0;
+      }
+
+      .poll > .poll-option .question-select label {
+        cursor: pointer;
+      }
+
+      .poll > .poll-option .progress {
+        display: flex;
+        align-items: center;
+      }
+
+      .poll > .poll-option .progress .question-progress {
+        flex: 1 0 0;
+      }
+
+      .poll > .poll-option .progress .question-progress[value] {
+        appearance: none;
+        border: none;
+        width: 100%;
+        height: 20px;
+        border-radius: 10px;
+        background: #eee;
+      }
+
+      .poll > .poll-option .progress .question-progress[value]::-webkit-progress-bar {
+        border-radius: 10px;
+        background: #eee;
+      }
+
+      /*CAN'T GROUP PSEUDO ELEMENTS TOGHETHER, WEBKIT WILL FAIL */
+      .poll > .poll-option .progress .question-progress[value]::-webkit-progress-value {
+        background: #666;
+        border-radius: 10px;
+        box-shadow: 0 0 6px rgb(0, 0, 0, 0.3);
+      }
+
+      .poll > .poll-option .progress .question-progress[value]::-moz-progress-bar {
+        background: #666;
+        border-radius: 10px;
+        box-shadow: 0 0 6px rgb(0, 0, 0, 0.3);
+      }
+
+      .poll > .poll-option .progress .progress-green[value]::-webkit-progress-value {
+        background: rgb(153, 232, 112);
+      }
+
+      .poll > .poll-option .progress .progress-green[value]::-moz-progress-bar {
+        background: rgb(153, 232, 112);
+      }
+
+      .poll > .poll-option .progress .progress-red[value]::-webkit-progress-value {
+        background: rgb(255, 95, 87);
+      }
+      .poll > .poll-option .progress .progress-red[value]::-moz-progress-bar {
+        background: rgb(255, 95, 87);
+      }
+
+      .poll > .poll-option .progress .progress-orange[value]::-webkit-progress-value {
+        background: rgb(255, 153, 78);
+      }
+      .poll > .poll-option .progress .progress-orange[value]::-moz-progress-bar {
+        background: rgb(255, 153, 78);
+      }
+
+      .poll > .poll-option .progress label {
+        flex: 0 1 auto;
+        font-weight: 700;
+        font-size: 24px;
+        margin: 0 0 0 20px;
+        color: rgb(72, 112, 121);
+      }
+
+      .actions {
+        text-align: center;
+        padding: 60px 30px;
+      }
+
+      .actions > .submit {
+        border: none;
+        padding: 18px 60px;
+        border-radius: 10px;
+        background: rgb(6, 179, 213);
+        color: #fff;
+        font-size: 24px;
+        font-family: Lato, sans-serif;
+        font-weight: 700;
+        box-shadow: 0 0 12px rgb(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="poll">
+      <h1 class="question">
+        <span>If you write a book about failure,<br />and it doesn't sell, is it called success?</span>
+      </h1>
+
+      <section class="poll-option">
+        <div class="question-select">
+          <input type="radio" id="opt1" name="answers" value="" checked />
+          <label for="opt1">Definitely a success.</label>
+        </div>
+        <div class="progress">
+          <progress max="100" value="65" class="question-progress progress-green" id="progress1"></progress>
+          <label for="progress1">65%</label>
+        </div>
+      </section>
+
+      <section class="poll-option">
+        <div class="question-select">
+          <input type="radio" id="opt2" name="answers" value="" />
+          <label for="opt2">No.</label>
+        </div>
+        <div class="progress">
+          <progress max="100" value="12" class="question-progress progress-red" id="progress2"></progress>
+          <label for="progress2">12%</label>
+        </div>
+      </section>
+
+      <section class="poll-option">
+        <div class="question-select">
+          <input type="radio" id="opt3" name="answers" value="" />
+          <label for="opt3">Only if it's in the How To section of the library.</label>
+        </div>
+        <div class="progress">
+          <progress max="100" value="23" class="question-progress progress-orange" id="progress3"></progress>
+          <label for="progress3">23%</label>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button type="submit" class="submit">Submit</button>
+      </div>
+    </section>
+  </body>
+</html>
