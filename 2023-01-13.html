@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
+
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: rgb(175, 40, 48);
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: Nunito, sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+      }
+
+      .card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgb(34, 22, 26);
+        color: rgb(184, 175, 179);
+        padding: 60px;
+        margin: 20px;
+        border-radius: 10px;
+      }
+
+      .pricing-plan {
+        min-width: 375px;
+        margin: 0 0 80px 0;
+      }
+
+      .pricing-plan:last-child {
+        margin-bottom: 0;
+      }
+
+      @media screen and (min-width: 767px) {
+        .card {
+          padding: 100px 60px;
+          display: flex;
+        }
+
+        .pricing-plan {
+          flex: 1 0 0;
+          padding: 60px;
+          border-right: 1px solid rgb(49, 35, 40);
+        }
+      }
+
+      .pricing-plan:last-child {
+        border: 0;
+      }
+
+      .pricing-plan > .plan-name {
+        margin: 0 0 22px 0;
+        padding: 0;
+        font-size: 36px;
+        font-weight: 600;
+      }
+
+      .pricing-plan > .price {
+        display: block;
+        font-size: 23px;
+        margin: 0 0 5px 0;
+      }
+
+      .pricing-plan > .lead-in {
+        display: block;
+        font-style: normal;
+        font-size: 16px;
+      }
+
+      .pricing-plan > .features {
+        margin: 60px 0;
+        padding: 0;
+        list-style-position: inside;
+        font-size: 18px;
+      }
+
+      .pricing-plan > .features li {
+        margin: 0 0 5px 0;
+      }
+
+      .pricing-plan > .features li:last-child {
+        margin: 0;
+      }
+
+      .pricing-plan > .features span {
+        margin-left: -12px;
+      }
+
+      .pricing-plan > .button {
+        transition: all linear 80ms;
+        border: 1px solid rgb(175, 40, 48);
+        color: rgb(175, 40, 48);
+        background: none;
+        padding: 10px;
+        font-family: Nunito, sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        border-radius: 3px;
+        padding: 20px 40px;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+      }
+
+      .pricing-plan > .primary-button,
+      .pricing-plan > .button:hover {
+        background: rgb(175, 40, 48);
+        color: rgb(217, 217, 217);
+      }
+
+      .pricing-plan > .primary-button:hover {
+        background: rgb(209, 47, 58);
+      }
+
+    </style>
+  </head>
+  <body>
+    <section class="card">
+      <section class="pricing-plan">
+        <h2 class="plan-name">Basic</h2>
+        <strong class="price">Free</strong>
+        <em class="lead-in">3,000 monthly visitors</em>
+
+        <ul class="features">
+          <li><span>Limited reports</span></li>
+          <li><span>Unlimited projects</span></li>
+          <li><span>Data storage for 1 year</span></li>
+        </ul>
+
+        <button type="submit" class="button">Start Now</button>
+      </section>
+
+      <section class="pricing-plan">
+        <h2 class="plan-name">Pro</h2>
+        <strong class="price">$19 / month</strong>
+        <em class="lead-in">10,000 monthly visitors</em>
+
+        <ul class="features">
+          <li><span>Unlimited reports</span></li>
+          <li><span>15-days free trial</span></li>
+          <li><span>Data storage for 3 year</span></li>
+        </ul>
+
+        <button type="submit" class="button primary-button">Try it</button>
+      </section>
+    </section>
+  </body>
+</html>
