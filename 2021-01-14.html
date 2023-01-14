@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #029ba4;
+        background: -webkit-radial-gradient(center, #029ba4, #016774);
+        background: -moz-radial-gradient(center, #029ba4, #016774);
+        background: radial-gradient(ellipse at center, #029ba4, #016774);
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif;
+        font-size: 20px;
+      }
+
+      .progress {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        margin: 0 auto;
+        width: 60%;
+      }
+
+      .progress progress[value] {
+        appearance: none;
+        border: none;
+        width: 100%;
+        height: 10px;
+        border-radius: 5px;
+        background: rgb(0, 81, 100);
+      }
+
+      .progress progress[value]::-webkit-progress-bar {
+        border-radius: 5px;
+        background: rgb(0, 81, 100);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) inset;
+      }
+
+      /* CAN'T GROUP PSEUDO ELEMENTS TOGHETHER, WEBKIT WILL FAIL */
+      .progress progress[value]::-webkit-progress-value {
+        border-radius: 5px;
+        box-shadow: 0 2px 12px rgb(0, 0, 0, 0.3);
+      }
+
+      .progress progress[value]::-moz-progress-bar {
+        background: #666;
+        border-radius: 10px;
+        box-shadow: 0 2px 12px rgb(0, 0, 0, 0.3);
+      }
+
+      .progress progress[value]::-webkit-progress-value {
+        background: #68c6f0;
+        background: -webkit-linear-gradient(left, #68c6f0, #67ecc1);
+        background: -moz-linear-gradient(left, #68c6f0, #67ecc1);
+        background: linear-gradient(to right, #68c6f0, #67ecc1);
+      }
+
+      .progress progress[value]::-moz-progress-bar {
+        background: #68c6f0;
+        background: -webkit-linear-gradient(left, #68c6f0, #67ecc1);
+        background: -moz-linear-gradient(left, #68c6f0, #67ecc1);
+        background: linear-gradient(to right, #68c6f0, #67ecc1);
+      }
+
+      .progress label {
+        font-weight: 700;
+        font-size: 18px;
+        color: #FFF;
+        display: block;
+        position: relative;
+        width: 100%;        
+        margin: 10px 0 0 0;
+      }
+
+      .progress label span {
+        position: absolute;
+        width: 62px;
+        left: calc(63% - 31px);
+        background: rgb(1, 81, 100);
+        padding: 8px 0;      
+        border-radius: 5px;  
+        text-align: center;
+        box-shadow: 0 2px 6px rgb(0, 0, 0, 0.5);
+      }
+
+      .progress label span::before {
+        content: "";
+        width: 0;
+        height: 0;
+        
+        position: absolute;
+        transform: translateX(-50%) rotate(45deg);
+        top: -3px;
+        left: 50%;
+        
+        border-top: 3px solid rgb(1, 81, 100);
+        border-bottom: 3px solid transparent;
+        border-right: 3px solid transparent;      
+        border-left: 3px solid rgb(1, 81, 100);
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="progress">
+      <progress max="100" value="63" id="progress-bar"></progress>
+      <label for="progress-bar">
+        <span>63%</span>
+      </label>
+    </div>
+  </body>
+</html>
