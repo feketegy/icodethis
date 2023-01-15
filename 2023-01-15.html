@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
+
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: rgb(23, 33, 63);
+        color: rgb(214, 221, 241);
+
+        margin: 0;
+        padding: 0;
+        font-family: Nunito, sans-serif;
+        font-size: 16px;
+      }
+
+      .container {
+        margin: 20px;
+      }
+
+      .container > .item {
+        margin: 0 auto 30px auto;
+        width: 277px;
+        height: 385px;
+        border-radius: 5px;
+        overflow: hidden;
+        background: rgb(15, 22, 43);
+        box-shadow: 0 0 12px rgb(0, 0, 0, 0.3);
+      }
+
+      @media screen and (min-width: 992px) {
+        .container {
+          position: absolute;
+          top: 50%;
+          left: 20px;
+          right: 20px;
+          transform: translateY(-50%);
+          display: flex;
+          flex-wrap: wrap;
+          align-items: top;
+          justify-content: center;
+        }
+
+        .container > .item {
+          margin: 0 30px 30px 0;
+          flex: 0 0 277px;          
+        }
+      }
+
+      .container > .item > .profile-photo {
+        object-fit: none;
+        object-position: 0 0;
+        width: 277px;
+        height: 199px;
+      }
+
+      .container > .item > .profile-jon {
+        object-position: 0 -199px;
+      }
+
+      .container > .item > .profile-leo {
+        object-position: 0 -398px;
+      }
+
+      .container > .item > .name {
+        margin: 0;
+        padding: 16px 20px 4px 20px;
+        font-size: 19px;
+      }
+
+      .container > .item > .job-title {
+        margin: 0;
+        padding: 0 20px;
+        color: rgb(126, 137, 170);
+        font-size: 16px;
+      }
+
+      .container > .item > .prev {
+        margin: 0;
+        padding: 20px 20px 10px 20px;
+        color: rgb(118, 128, 159);
+        font-size: 14px;
+      }
+
+      .container > .item > .logo {
+        margin: 0 0 30px 20px;
+        object-fit: none;
+      }
+
+      .container > .item > .logo-google {
+        object-position: -277px 0;
+        width: 84px;
+        height: 28px;
+      }
+
+      .container > .item > .logo-uber {
+        object-position: -277px -28px;
+        width: 56px;
+        height: 19px;
+      }
+
+      .container > .item > .logo-intercom {
+        object-position: -277px -47px;
+        width: 100px;
+        height: 26px;
+      }
+
+      .container > .item-more {
+        border: 5px solid rgb(20, 29, 56);
+        color: rgb(126, 137, 170);
+        font-size: 14px;
+        width: 277px;
+        height: 385px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 0 auto;
+      }
+
+      @media screen and (min-width: 992px) {
+        .container > .item-more {
+          margin: 0;
+        }
+      }
+
+      .container > .item-more > svg {
+        width: 25px;
+        height: 25px;
+        fill: rgb(162, 173, 211);
+      }
+
+      .container > .item-more > h3 {
+        margin: 20px 0 0 0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <section class="item">
+        <img class="profile-photo profile-bill" src="https://i.imgur.com/hwTKHK5.jpg" alt="Bill Alvarado Profile Photo" />
+
+        <h2 class="name">Bill Alvarado</h2>
+        <h3 class="job-title">Digital product designer</h3>
+
+        <h4 class="prev">Previously</h4>
+
+        <img class="logo logo-google" src="https://i.imgur.com/hwTKHK5.jpg" alt="Google Logo" />
+      </section>
+
+      <section class="item">
+        <img class="profile-photo profile-jon" src="https://i.imgur.com/hwTKHK5.jpg" alt="Jon Copeland Profile Photo" />
+
+        <h2 class="name">Jon Copeland</h2>
+        <h3 class="job-title">Software architect</h3>
+
+        <h4 class="prev">Previously</h4>
+
+        <img class="logo logo-uber" src="https://i.imgur.com/hwTKHK5.jpg" alt="Uber Logo" />
+      </section>
+
+      <section class="item">
+        <img class="profile-photo profile-leo" src="https://i.imgur.com/hwTKHK5.jpg" alt="Bill Alvarado Profile Photo" />
+
+        <h2 class="name">Leo Harvey</h2>
+        <h3 class="job-title">Product assistant</h3>
+
+        <h4 class="prev">Previously</h4>
+
+        <img class="logo logo-intercom" src="https://i.imgur.com/hwTKHK5.jpg" alt="Intercom Logo" />
+      </section>
+
+      <section class="item-more">
+        <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M14 0c-1.546 0-2.8 1.254-2.8 2.8v8.4h-8.4c-1.546 0-2.8 1.254-2.8 2.8s1.254 2.8 2.8 2.8h8.4v8.4c0 1.546 1.254 2.8 2.8 2.8s2.8-1.254 2.8-2.8v-8.4h8.4c1.546 0 2.8-1.254 2.8-2.8s-1.254-2.8-2.8-2.8h-8.4v-8.4c0-1.546-1.254-2.8-2.8-2.8z"
+          ></path>
+        </svg>
+
+        <h3>Add more</h3>
+      </section>
+    </section>
+  </body>
+</html>
