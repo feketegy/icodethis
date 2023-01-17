@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
+
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: rgba(80, 159, 198, 1);
+        background: -webkit-radial-gradient(left, rgba(80, 159, 198, 1), rgba(136, 200, 231, 1));
+        background: -moz-radial-gradient(left, rgba(80, 159, 198, 1), rgba(136, 200, 231, 1));
+        background: radial-gradient(to right, rgba(80, 159, 198, 1), rgba(136, 200, 231, 1));
+
+        min-height: 100vh;
+
+        margin: 0;
+        padding: 0;
+        font-family: Nunito, sans-serif;
+        font-size: 16px;
+      }
+
+      .profile {
+        background: #fff;
+        margin: 100px auto 0 auto;
+        max-width: 600px;
+        text-align: center;
+        padding: 70px;
+        box-shadow: 0 0 60px rgb(0, 0, 0, 0.2);
+      }
+
+      .profile > .avatar {
+        overflow: hidden;
+        margin: 0 auto;
+        width: 161px;
+        height: 161px;
+        border-radius: 50%;
+        border: 1px solid rgb(243, 243, 243);
+        position: relative;
+      }
+
+      .profile > .avatar img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .profile > .name {
+        margin: 10px 0 0 0;
+        font-weight: 600;
+        font-size: 24px;
+        padding: 0;
+      }
+
+      .profile > .job-position {
+        margin: 10px 0 0 0;
+        padding: 4px 20px;
+        font-size: 22px;
+        font-weight: 400;
+        border: 1px solid rgb(82, 192, 251);
+        color: rgb(82, 192, 251);
+        display: inline-block;
+        border-radius: 23px;
+      }
+
+      .profile > .excerpt {
+        font-size: 24px;
+        font-weight: 400;
+      }
+
+      .projects {
+        background: rgb(38, 53, 60);
+        color: rgb(252, 252, 252);
+        margin: 0 auto 100px auto;
+        max-width: 640px;
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .projects > .title {
+        margin: 0 0 30px 0;
+        padding: 0;
+        font-size: 36px;
+        font-weight: 400;
+        letter-spacing: 1px;
+      }
+
+      .projects > .legend {
+        display: flex;
+        background: rgb(31, 42, 48);
+        margin: 40px 0 0 0;
+        padding: 20px 0;
+        box-shadow: 0 0 40px 6px rgb(0, 0, 0, 0.35);
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .projects > .legend > .item {
+        flex: 1 0 auto;
+        text-align: center;
+      }
+
+      .projects > .legend > .item > .value {
+        display: block;
+        font-size: 36px;
+        font-weight: 400;
+        margin: 0;
+      }
+
+      .projects > .legend > .item > .description {
+        display: block;
+        color: rgb(122, 133, 138);
+        font-size: 22px;
+        font-style: normal;
+      }
+
+      .projects > .legend > .item > .color {
+        background: white;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: 10px auto 0 auto;
+      }
+
+      .projects > .legend > .item > .color-teal {
+        background: rgb(1, 231, 195);
+      }
+
+      .projects > .legend > .item > .color-yellow {
+        background: rgb(238, 188, 1);
+      }
+
+      .projects > .legend > .item > .color-purple {
+        background: rgb(128, 103, 251);
+      }
+
+      .projects > .chart {
+        position: relative;
+        width: 260px;
+        height: 260px;
+        margin: 0 auto 40px;
+        border-radius: 100%;
+      }
+
+      .projects > .chart > .sect {
+        border-radius: 50%;
+        clip: rect(0px, 260px, 260px, 130px);
+        height: 100%;
+        position: absolute;
+        width: 100%;
+      }
+
+      .projects > .chart > .sect > .circle {
+        border-radius: 50%;
+        clip: rect(0px, 130px, 260px, 0px);
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        font-family: monospace;
+        font-size: 1.5rem;
+      }
+
+      .projects > .chart > .sect-yellow {
+        transform: rotate(340deg);
+      }
+
+      .projects > .chart > .sect-yellow > .circle {
+        background: rgb(238, 188, 1);
+        transform: rotate(47deg);
+      }
+
+      .projects > .chart > .sect-purple {
+        transform: rotate(27deg);
+      }
+
+      .projects > .chart > .sect-purple > .circle {
+        background: rgb(128, 103, 251);
+        transform: rotate(134deg);
+      }
+
+      .projects > .chart > .sect-teal {
+        transform: rotate(160deg);
+      }
+
+      .projects > .chart > .sect-teal > .circle {
+        background: rgb(1, 231, 195);
+        transform: rotate(180deg);
+      }
+
+      .projects > .chart > .center {
+        background: rgb(38, 53, 60);
+        position: absolute;
+        text-align: center;
+        top: -9px;
+        left: 7px;
+        width: 246px;
+        height: 246px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .projects > .chart > .center > strong {
+        font-size: 48px;
+        line-height: 48px;
+      }
+
+      .projects > .chart > .center > em {
+        font-style: normal;
+        color: rgb(122, 133, 138);
+        font-size: 28px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <section class="profile">
+      <section class="avatar">
+        <img src="https://i.imgur.com/e7jvG2I.jpg" alt="Profile Photo" />
+      </section>
+      <h1 class="name">John Hawkins</h1>
+      <h2 class="job-position">UI/UX Designer</h2>
+      <p class="excerpt">Mauris ac quam quisqui, donec, ac, praesent in hymenaeos wisi.</p>
+    </section>
+
+    <section class="projects">
+      <h2 class="title">Projects</h2>
+
+      <section class="chart">
+        <section class="sect sect-yellow"><div class="circle"></div></section>
+        <section class="sect sect-purple"><div class="circle"></div></section>
+        <section class="sect sect-teal"><div class="circle"></div></section>
+        <p class="center">
+          <strong>314</strong>
+          <em>Total</em>
+        </p>
+      </section>
+
+      <section class="legend">
+        <div class="item">
+          <strong class="value">167</strong>
+          <em class="description">Completed</em>
+          <div class="color color-teal">&nbsp;</div>
+        </div>
+        <div class="item">
+          <strong class="value">24</strong>
+          <em class="description">Overdue</em>
+          <div class="color color-yellow">&nbsp;</div>
+        </div>
+        <div class="item">
+          <strong class="value">123</strong>
+          <em class="description">In Progress</em>
+          <div class="color color-purple">&nbsp;</div>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>
