@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: rgb(237, 243, 255);
+        min-height: 100vh;
+
+        margin: 0;
+        padding: 0;
+        font-family: Roboto, sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .container {
+        background: rgb(77, 73, 232);
+        padding: 65px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 16px;
+        margin-left: 50px;
+      }
+
+      .form {
+        background: #fff;
+        border-radius: 16px;
+        padding: 30px;
+
+        text-align: center;
+        margin-left: -100px;
+      }
+
+      @media screen and (min-width: 992px) {
+        .form {
+          min-width: 450px;
+          padding: 70px;
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        .container {
+          margin-left: 100px;
+        }
+        .form {
+          margin-left: -200px;
+        }
+      }
+
+      .form > .title {
+        margin: 0 0 50px 0;
+        padding: 0;
+        font-size: 36px;
+        font-weight: 700;
+        text-align: left;
+      }
+
+      .sign-in > label {
+        font-size: 14px;
+        font-weight: 700;
+        display: block;
+        margin: 0 0 5px 0;
+        text-align: left;
+      }
+
+      .sign-in > input {
+        padding: 20px;
+        margin: 0 0 40px 0;
+        border: 1px solid rgb(197, 208, 230);
+        border-radius: 5px;
+        display: block;
+        width: 100%;
+      }
+
+      .sign-in > input[type="password"] {
+        margin: 0 0 20px 0;
+      }
+
+      @media screen and (min-width: 480px) {
+        .sign-in > .actions {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .sign-in > .actions > button {
+        padding: 25px 55px;
+        margin: 0 0 20px 0;
+        border-radius: 500px;
+        border: none;
+        background: rgb(77, 73, 232);
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .sign-in > .actions > a {
+        text-decoration: none;
+        color: #000;
+        margin: 0;
+      }
+
+      .form > .lead-in {
+        margin: 50px 0 6px 0;
+        padding: 0;
+      }
+
+      .form > a {
+        color: #000;
+        font-size: 18px;
+      }
+
+      @media screen and (min-width: 768px) {
+        .sign-in > .actions > button {
+          margin: 0;
+          padding: 25px 55px;
+        }
+
+        .sign-in > .actions > a {
+          margin: 0 0 0 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <section class="form">
+        <h1 class="title">Sign in</h1>
+
+        <form class="sign-in">
+          <label for="username">Username or email</label>
+          <input type="text" name="username" />
+
+          <label for="password">Password</label>
+          <input type="password" name="password" />
+
+          <div class="actions">
+            <button type="submit">Sign in</button>
+            <a href="javascript: void(0)">Forgot your password?</a>
+          </div>
+        </form>
+
+        <h3 class="lead-in">Don't have an account?</h3>
+        <a href="javascript: void(0)">Sign up</a>
+      </section>
+    </section>
+  </body>
+</html>
