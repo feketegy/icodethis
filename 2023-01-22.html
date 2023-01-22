@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: rgb(237, 243, 255);
+        color: rgb(27, 28, 64);
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      .container {
+        background: rgb(223, 232, 247);
+        padding: 15px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 40px;
+      }
+
+      .form {
+        background: #fff;
+        border-radius: 16px;
+        padding: 60px 40px;
+        text-align: center;
+        box-shadow: 0 10px 24px rgba(46, 46, 46, 0.1);
+        max-width: 745px;
+      }
+
+      @media screen and (min-width: 768px) {
+        .container {
+          padding: 35px;
+        }
+      }
+
+      @media screen and (min-width: 1140px) {
+        .form {
+          padding: 120px 170px 90px 170px;
+        }
+      }
+
+      .form > .title {
+        max-width: 250px;
+        font-size: 38px;
+        text-align: center;
+        margin: 0 auto 30px auto;
+      }
+
+      .form > .leadin {
+        margin: 0 auto 40px auto;
+        padding: 0;
+        font-size: 22px;
+        font-weight: 600;
+        max-width: 400px;
+      }
+
+      .form > .facebook,
+      .sign-in > button {
+        border: 0;
+        border-radius: 5px;
+        background: rgb(73, 104, 173);
+        color: #fff;
+        width: 100%;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        padding: 20px;
+        cursor: pointer;
+      }
+
+      .form > .sep {
+        display: block;
+        margin: 20px;
+        font-style: normal;
+        font-size: 20px;
+        font-weight: 600;
+        color: rgb(128, 128, 128);
+      }
+
+      .sign-in input {
+        padding: 20px;
+        margin: 0 0 20px 0;
+        border: 2px solid rgb(200, 209, 229);
+        border-radius: 5px;
+        display: block;
+        width: 100%;
+        font-size: 18px;
+        font-weight: 400;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .sign-in > .name {
+        margin: 0 0 20px 0;
+      }
+
+      .sign-in > .name > input {
+        margin: 0 10px 20px 0;
+      }
+
+      .sign-in > .name > input:last-child {
+        margin: 0 0 10px 0;
+      }
+
+      @media screen and (min-width: 992px) {
+        .sign-in > .name {
+          display: flex;
+        }
+
+        .sign-in > .name > input {
+          flex: 0 1 auto;
+          margin: 0 10px 0 0;
+        }
+
+        .sign-in > .name > input:last-child {
+          margin: 0;
+        }
+      }
+
+      .sign-in > button {
+        background: rgb(30, 44, 75);
+      }
+
+      .form > .terms {
+        font-size: 16px;
+        color: rgb(91, 101, 124);
+        margin: 40px auto 0 auto;
+        max-width: 300px;
+      }
+
+      .form > .terms > a {
+        text-decoration: none;
+        color: rgb(91, 101, 124);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <section class="form">
+        <h1 class="title">Join the community</h1>
+        <h2 class="leadin">Take your art to the next level. Get it seen by millions of people.</h2>
+
+        <button class="facebook">Join with Facebook</button>
+        <em class="sep">Or</em>
+
+        <form class="sign-in">
+          <div class="name">
+            <input type="text" name="firstname" placeholder="First name" />
+            <input type="text" name="lastname" placeholder="Last name" />
+          </div>
+
+          <input type="text" name="email" placeholder="E-mail" />
+          <input type="password" name="password" placeholder="Password" />
+
+          <button type="submit">Create New Account</button>
+        </form>
+
+        <p class="terms">By joining, you agree to our <a href="javascript: void(0)">Terms of Service</a> and <a href="javascript: void(0)">Privacy Policy</a></p>
+      </section>
+    </section>
+  </body>
+</html>
